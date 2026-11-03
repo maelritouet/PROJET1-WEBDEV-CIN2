@@ -24,10 +24,21 @@ Application backend TypeScript / Node.js / Express / MongoDB pour la vie associa
    ```bash
    cp .env.example .env
    ```
-3. Démarrer en développement :
+3. Démarrer MongoDB (obligatoire) :
+   - **Service local** (si MongoDB est installé) :
+     ```bash
+     sudo systemctl start mongod
+     ```
+   - **Ou Docker** :
+     ```bash
+     docker run -d --name projet1-mongo -p 27017:27017 mongo:7
+     ```
+4. Démarrer en développement :
    ```bash
    npm run dev
    ```
+
+> Si vous voyez `ECONNREFUSED 127.0.0.1:27017` ou `::1:27017`, MongoDB n'est pas démarré (ou `MONGODB_URI` n'est pas correcte).
 
 ## Scripts
 
